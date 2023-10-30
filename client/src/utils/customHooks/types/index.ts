@@ -11,6 +11,7 @@ export interface PokemonBase {
   name: string;
   url: string;
 }
+
 // Create the interface with id
 interface Pokemon extends PokemonBase {
   id: number;
