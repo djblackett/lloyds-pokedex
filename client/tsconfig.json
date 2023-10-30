@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "src/app/pokemon/[name]/page.jsx",
     "src/app/components/PokemonList/PokemonList.jsx",
-    "src/app/page.jsx",
+    "src/app/page.tsx",
     "src/app/components/PokemonAbility/PokemonAbility.jsx",
     "src/app/components/PokemonPage/PokemonPage.jsx",
     "src/app/components/PokemonList/PokemonList.test.jsx",
