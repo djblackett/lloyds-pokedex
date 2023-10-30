@@ -40,7 +40,16 @@ To embark on this project, follow these steps:
 
 While this project primarily serves my personal learning goals, I wholeheartedly welcome contributions, suggestions, or feedback. If you have improvements or ideas, feel free to open issues or submit pull requests. Let's learn and grow together!
 
-### Likely Additions
+## Todo List
+
+We are at MVP. The app is working as intended but many refactors need to happen after I set up CI/CD.
+
+- [ ] Convert to 100% TypeScript
+- [ ] Add more Tailwind components
+- [ ] Make use of server components and look at removing custom hooks
+- [ ] Simplify logic for changing cards on the details page
+
+## Likely Additions
 
 In the future, I plan to explore enhancements and integrations, including:
 
