@@ -1,0 +1,18 @@
+name: Now It Is and Directory Content
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  now_and_directory_job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Now it is
+        run: |
+          echo "Current date is $(date)"
+
+      - name: Directory Content
+        run: |
+          ls -l
