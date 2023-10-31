@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { MappedPokemon } from "@/types";
 
-const PokemonList = ({ pokemonList }) => {
+const PokemonList = ({ pokemonList }: { pokemonList: MappedPokemon[] }) => {
   return (
     <div className="list-container">
       {pokemonList &&
