@@ -1,9 +1,9 @@
 name: Now It Is and Directory Content
 
 on:
+  pull_request:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   now_and_directory_job:
