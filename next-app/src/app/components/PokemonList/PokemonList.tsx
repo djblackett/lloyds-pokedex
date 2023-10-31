@@ -3,7 +3,7 @@ import { MappedPokemon } from "@/types";
 
 const PokemonList = ({ pokemonList }: { pokemonList: MappedPokemon[] }) => {
   return (
-    <div className="list-container">
+    <div className="flex flex-wrap">
       {pokemonList &&
         pokemonList.map(({ id, name }) => (
           <Link
