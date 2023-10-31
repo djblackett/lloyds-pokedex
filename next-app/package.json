@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "prod": "node .next/standalone/server.js"
   },
   "dependencies": {
     "axios": "^1.6.0",
