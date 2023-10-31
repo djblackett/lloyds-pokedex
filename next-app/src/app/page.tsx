@@ -1,5 +1,5 @@
 import { PokemonList } from "@/app/components";
-import { fetchAndMapPokemonList } from "@/utils/helpers";
+import { fetchAndMapPokemonList } from "@/helpers";
 
 export default async function page() {
   const pokemonList = await fetchAndMapPokemonList();
