@@ -1,17 +1,4 @@
-interface PokemonResult {
-  url: string;
-  name: string;
-}
-
-interface PokemonListData {
-  results: PokemonResult[];
-}
-
-interface MappedPokemon {
-  url: string;
-  name: string;
-  id: number;
-}
+import { PokemonListData, MappedPokemon, Pokemon } from "@/types";
 
 const mapPokemonList = ({ results }: PokemonListData): MappedPokemon[] => {
   return results.map(({ url, name }) => ({
@@ -49,6 +36,30 @@ export const findPreviousAndNextPokemon = (
 
 export const fetchPokemon = async (name: string) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-  const data = await response.json();
+  const data: Pokemon = await response.json();
+
   return data;
+};
+
+export const getTypes = (pokemon: Pokemon) => {
+  return pokemon?.types?.find((type) => type.slot === 1);
+};
+
+const formatName = (nameWithDash: string) => nameWithDash.replace("-", " ");
+
+export const getStats = (pokemon: Pokemon) => {
+  return pokemon?.stats
+    ?.map((stat) => ({
+      name: formatName(stat.stat.name),
+      value: stat.base_stat,
+    }))
+    .reverse();
+};
+
+export const getNormalAbility = (pokemon: Pokemon) => {
+  return pokemon?.abilities?.find((ability) => !ability.is_hidden);
+};
+
+export const getHiddenAbility = (pokemon: Pokemon) => {
+  return pokemon?.abilities?.find((ability) => ability.is_hidden === true);
 };

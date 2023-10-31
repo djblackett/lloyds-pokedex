@@ -7,4 +7,3 @@ const LoadingSpinner = () => (
 );
 
 export default LoadingSpinner;
-// if error >

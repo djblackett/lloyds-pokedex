@@ -1,26 +1,23 @@
 import Link from "next/link";
 import { PokemonAbility } from "@/app/components";
-import { fetchPokemon } from "@/utils/helpers";
+import {
+  fetchPokemon,
+  getTypes,
+  getStats,
+  getNormalAbility,
+  getHiddenAbility,
+} from "@/helpers";
 
 const formatName = (nameWithDash) => nameWithDash.replace("-", " ");
 
 const PokemonPage = async ({ previous, next, name }) => {
   const pokemon = await fetchPokemon(name);
+  const types = getTypes(pokemon);
+  const stats = getStats(pokemon);
 
-  const types = pokemon?.types?.find((type) => type.slot === 1);
+  const normalAbility = getNormalAbility(pokemon);
+  const hiddenAbility = getHiddenAbility(pokemon);
 
-  const stats = pokemon?.stats
-    .map((stat) => ({
-      name: formatName(stat.stat.name),
-      value: stat.base_stat,
-    }))
-    .reverse();
-  const normalAbility = pokemon?.abilities.find(
-    (ability) => !ability.is_hidden
-  );
-  const hiddenAbility = pokemon?.abilities.find(
-    (ability) => ability.is_hidden === true
-  );
   /* eslint-disable no-console */
   console.log("hiddenAbility=", hiddenAbility);
   /* eslint-disable no-console */
