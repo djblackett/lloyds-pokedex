@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const LoadingSpinner = () => (
   <img
     className="loading-spinner"
