@@ -1,12 +1,12 @@
-"use client";
 import Link from "next/link";
-import { useApi } from "@/utils/customHooks/useApi";
 import { PokemonAbility } from "@/app/components";
+import { fetchPokemon } from "@/utils/helpers";
 
 const formatName = (nameWithDash) => nameWithDash.replace("-", " ");
 
-const PokemonPage = ({ previous, next, name }) => {
-  const { data: pokemon } = useApi(`https://pokeapi.co/api/v2/pokemon/${name}`);
+const PokemonPage = async ({ previous, next, name }) => {
+  const pokemon = await fetchPokemon(name);
+
   const types = pokemon?.types?.find((type) => type.slot === 1);
 
   const stats = pokemon?.stats
