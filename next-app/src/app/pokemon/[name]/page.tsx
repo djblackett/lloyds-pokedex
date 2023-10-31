@@ -1,8 +1,5 @@
 import { PokemonPage } from "@/app/components";
-import {
-  fetchAndMapPokemonList,
-  findPreviousAndNextPokemon,
-} from "@/utils/helpers";
+import { fetchAndMapPokemonList, findPreviousAndNextPokemon } from "@/helpers";
 
 interface Params {
   params: {
