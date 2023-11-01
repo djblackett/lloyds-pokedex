@@ -24,13 +24,9 @@ export const findPreviousAndNextPokemon = (
   name: string
 ) => {
   const pokemonId = findPokemonId(pokemonList, name);
-  if (pokemonId === null) {
-    return { previous: null, next: null };
-  }
-
+  if (!pokemonId) return { previous: undefined, next: undefined };
   const previous = pokemonList?.find((pokemon) => pokemon.id === pokemonId - 1);
   const next = pokemonList?.find((pokemon) => pokemon.id === pokemonId + 1);
-
   return { previous, next };
 };
 
