@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PokemonAbility } from "@/app/components";
+import { MappedPokemon } from "@/types";
 import {
   fetchPokemon,
   getTypes,
@@ -8,9 +9,15 @@ import {
   getHiddenAbility,
 } from "@/helpers";
 
-const formatName = (nameWithDash) => nameWithDash.replace("-", " ");
+const formatName = (nameWithDash: string) => nameWithDash.replace("-", " ");
 
-const PokemonPage = async ({ previous, next, name }) => {
+interface PokemonPageProps {
+  previous?: MappedPokemon;
+  next?: MappedPokemon;
+  name: string;
+}
+
+const PokemonPage = async ({ previous, next, name }: PokemonPageProps) => {
   const pokemon = await fetchPokemon(name);
   const types = getTypes(pokemon);
   const stats = getStats(pokemon);
@@ -18,9 +25,6 @@ const PokemonPage = async ({ previous, next, name }) => {
   const normalAbility = getNormalAbility(pokemon);
   const hiddenAbility = getHiddenAbility(pokemon);
 
-  /* eslint-disable no-console */
-  console.log("hiddenAbility=", hiddenAbility);
-  /* eslint-disable no-console */
   return (
     <>
       <div className="links">

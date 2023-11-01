@@ -30,8 +30,8 @@
     "src/app/pokemon/[name]/page.tsx",
     "src/app/components/PokemonList/PokemonList.tsx",
     "src/app/page.tsx",
-    "src/app/components/PokemonAbility/PokemonAbility.jsx",
-    "src/app/components/PokemonPage/PokemonPage.jsx",
+    "src/app/components/PokemonAbility/PokemonAbility.tsx",
+    "src/app/components/PokemonPage/PokemonPage.tsx",
     "src/app/components/PokemonList/PokemonList.test.jsx",
     "src/utils/customHooks/useApi.js"
   ],
