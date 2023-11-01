@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,21 +23,18 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/app/pokemon/[name]/page.tsx",
-    "src/app/components/PokemonList/PokemonList.tsx",
-    "src/app/page.tsx",
-    "src/app/components/PokemonAbility/PokemonAbility.tsx",
-    "src/app/components/PokemonPage/PokemonPage.tsx",
-    "src/app/components/PokemonList/PokemonList.test.jsx",
-    "src/utils/customHooks/useApi.js"
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
