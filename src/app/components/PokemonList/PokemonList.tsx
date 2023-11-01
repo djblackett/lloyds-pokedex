@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MappedPokemon } from "@/types";
+import Image from "next/image";
 
 const PokemonList = ({ pokemonList }: { pokemonList: MappedPokemon[] }) => {
   return (
@@ -9,13 +10,19 @@ const PokemonList = ({ pokemonList }: { pokemonList: MappedPokemon[] }) => {
           <Link
             key={id}
             href={`/pokemon/${name}`}
-            className="bg-[#eee] bg-center bg-no-repeat m-2 h-36 w-36 relative"
-            style={{
-              // eslint-disable-next-line max-len
-              backgroundImage: `url(${`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`})`,
-            }}
+            className="m-2 h-36 w-36 relative border border-[#3F477A] rounded-md shadow-md"
           >
-            <div className="list-item-name">{name}</div>
+            <div className="bg-[#eee] bg-center bg-no-repeat">
+              <Image
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+                alt={name}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className="absolute bottom-0 w-full text-center capitalize bg-[#272822] text-[#2e51ff]">
+              {name}
+            </div>
           </Link>
         ))}
     </div>
