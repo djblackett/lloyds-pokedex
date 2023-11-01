@@ -18,9 +18,6 @@ const PokemonPage = async ({ previous, next, name }) => {
   const normalAbility = getNormalAbility(pokemon);
   const hiddenAbility = getHiddenAbility(pokemon);
 
-  /* eslint-disable no-console */
-  console.log("hiddenAbility=", hiddenAbility);
-  /* eslint-disable no-console */
   return (
     <>
       <div className="links">
