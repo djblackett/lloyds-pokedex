@@ -36,12 +36,12 @@ export interface Pokemon {
 }
 
 export interface Ability {
-  ability: Ability2;
+  ability: AbilityDetails;
   is_hidden: boolean;
   slot: number;
 }
 
-export interface Ability2 {
+export interface AbilityDetails {
   name: string;
   url: string;
 }
