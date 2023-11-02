@@ -20,7 +20,7 @@ const PokemonList = ({ pokemonList }: { pokemonList: MappedPokemon[] }) => {
                 objectFit="cover"
               />
             </div>
-            <div className="absolute bottom-0 w-full text-center capitalize bg-[#272822] text-[#2e51ff]">
+            <div className="absolute bottom-0 w-full text-center capitalize bg-[#272822] text-[$2e51ff]">
               {name}
             </div>
           </Link>
