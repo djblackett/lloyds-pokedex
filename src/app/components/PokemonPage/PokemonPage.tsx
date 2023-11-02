@@ -27,7 +27,7 @@ const PokemonPage = async ({ previous, next, name }: PokemonPageProps) => {
 
   return (
     <>
-      <div className="links">
+      <div className="flex justify-between mb-2 text-decoration-none w-80">
         {previous && <Link href={`/pokemon/${previous?.name}`}>Previous</Link>}
         <Link href="/">Home</Link>
         {next && <Link href={`/pokemon/${next?.name}`}>Next</Link>}
