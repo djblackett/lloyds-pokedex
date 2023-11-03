@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MappedPokemon } from "@/types";
-import Image from "next/image";
 
 const PokemonList = ({ pokemonList }: { pokemonList: MappedPokemon[] }) => {
   return (
