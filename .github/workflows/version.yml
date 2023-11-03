@@ -8,6 +8,10 @@ on:
 jobs:
   ViTest:
     uses: ./.github/workflows/test.yml
+  Lint:
+    uses: ./.github/workflows/lint.yml
+  CD:
+    uses: ./.github/workflows/CD.yml
   build:
     needs: [ViTest, Lint]
     runs-on: ubuntu-22.04
