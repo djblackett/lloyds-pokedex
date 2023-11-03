@@ -9,7 +9,7 @@ jobs:
   ViTest:
     uses: ./.github/workflows/test.yml
   build:
-    needs: [ViTest]
+    needs: [ViTest, Lint]
     runs-on: ubuntu-22.04
     permissions:
       contents: write
