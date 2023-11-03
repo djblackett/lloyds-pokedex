@@ -13,7 +13,7 @@ jobs:
   CD:
     uses: ./.github/workflows/CD.yml
   build:
-    needs: [ViTest, Lint]
+    needs: [ViTest, Lint, CD]
     runs-on: ubuntu-22.04
     permissions:
       contents: write
