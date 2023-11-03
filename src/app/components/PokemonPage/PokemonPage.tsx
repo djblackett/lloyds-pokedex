@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PokemonAbility } from "@/app/components";
-import { MappedPokemon } from "@/types";
 import {
   fetchPokemon,
   getTypes,
@@ -8,6 +7,7 @@ import {
   getNormalAbility,
   getHiddenAbility,
 } from "@/helpers";
+import { MappedPokemon } from "@/types";
 
 const formatName = (nameWithDash: string) => nameWithDash.replace("-", " ");
 
