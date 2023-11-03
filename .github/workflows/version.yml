@@ -1,15 +1,15 @@
 # example 1: on push to master
 name: Bump version
 on:
-  workflow_run:
-    workflows: [ "Unit Tests" ]
-    branches: [ main ]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
+  tests:
+    uses: ./.github/workflows/test.yml
   build:
-    needs: test
+    needs: [test]
     runs-on: ubuntu-22.04
     permissions:
       contents: write
@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: '0'
+
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.64.0 # Don't use @master or @v1 unless you're happy to test the latest version
         env:
