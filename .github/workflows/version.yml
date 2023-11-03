@@ -1,13 +1,14 @@
 # example 1: on push to master
 name: Bump version
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [ "test" ]
+    branches: [ main ]
+    types:
+      - completed
 
 jobs:
   build:
-    needs: [eslint, test]
     runs-on: ubuntu-22.04
     permissions:
       contents: write
