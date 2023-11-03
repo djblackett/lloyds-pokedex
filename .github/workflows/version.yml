@@ -6,10 +6,10 @@ on:
       - main
 
 jobs:
-  tests:
+  ViTest:
     uses: ./.github/workflows/test.yml
   build:
-    needs: [test]
+    needs: [ViTest]
     runs-on: ubuntu-22.04
     permissions:
       contents: write
