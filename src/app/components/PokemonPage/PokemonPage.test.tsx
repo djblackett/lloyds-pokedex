@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import PokemonPage from "./PokemonPage";
 import { vi } from "vitest";
-import * as helpers from "@/helpers";
+import PokemonPage from "./PokemonPage";
 import data from "./data.json";
+import * as helpers from "@/helpers";
 import { Pokemon } from "@/types";
 
 describe("PokemonPage", () => {
