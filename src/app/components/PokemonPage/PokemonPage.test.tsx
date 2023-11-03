@@ -1,24 +1,26 @@
-import * as helpers from "../../../helpers";
-import { Ability, Pokemon } from "@/types";
+import { render, screen } from "@testing-library/react";
+import PokemonPage from "./PokemonPage";
+import { vi } from "vitest";
+import * as helpers from "@/helpers";
+import data from "./data.json";
+import { Pokemon } from "@/types";
 
 describe("PokemonPage", () => {
-  test("getNormalAbility returns the normal ability", () => {
-    const mockPokemon = {
-      abilities: [
-        {
-          ability: {
-            name: "overgrow",
-            url: "https://pokeapi.co/api/v2/ability/65/",
-          },
-          is_hidden: false,
-          slot: 1,
-        },
-      ],
-    } as Pokemon;
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
 
-    const ability = helpers.getNormalAbility(mockPokemon) as Ability;
+  test("Checks component renders correctly", async () => {
+    const spy = vi.spyOn(helpers, "fetchPokemon").mockImplementation(() => {
+      return Promise.resolve(data as unknown as Pokemon);
+    });
 
-    expect(ability.ability.name).toBe("overgrow");
-    expect(ability.is_hidden).toBeFalsy();
+    const jsx = await PokemonPage({ name: "bulbasaur" });
+    render(jsx);
+
+    const headingElement = screen.getByTestId("pokemon-name");
+    expect(headingElement).toBeTruthy();
+    expect(headingElement.textContent).toBe("bulbasaur");
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });
